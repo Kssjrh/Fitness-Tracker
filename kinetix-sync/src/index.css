@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fitness Tracker Design System - Purple Theme */
+
+@layer base {
+  :root {
+    /* Purple Gradient Theme */
+    --background: 245 20% 98%;
+    --foreground: 255 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 255 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 255 10% 15%;
+
+    /* Primary Purple */
+    --primary: 262 52% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 265 65% 75%;
+
+    /* Secondary Purple Tones */
+    --secondary: 264 20% 95%;
+    --secondary-foreground: 255 10% 25%;
+
+    --muted: 264 15% 92%;
+    --muted-foreground: 255 8% 45%;
+
+    --accent: 262 45% 90%;
+    --accent-foreground: 255 10% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 264 25% 88%;
+    --input: 264 25% 88%;
+    --ring: 262 52% 65%;
+
+    --radius: 0.75rem;
+
+    /* Fitness App Specific Colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 221 83% 53%;
+    --info-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 52% 65%), hsl(265 65% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(264 45% 90%), hsl(264 20% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(262 52% 65%) 0%, hsl(265 65% 75%) 50%, hsl(280 60% 80%) 100%);
+    
+    /* Glassmorphic Effects */
+    --glass-bg: hsla(0, 0%, 100%, 0.8);
+    --glass-border: hsla(262, 52%, 65%, 0.2);
+    --glass-shadow: 0 8px 32px hsla(262, 52%, 65%, 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode Purple Theme */
+    --background: 255 10% 8%;
+    --foreground: 264 20% 95%;
+
+    --card: 255 10% 10%;
+    --card-foreground: 264 20% 95%;
+
+    --popover: 255 10% 10%;
+    --popover-foreground: 264 20% 95%;
+
+    --primary: 262 52% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 265 65% 75%;
+
+    --secondary: 255 10% 15%;
+    --secondary-foreground: 264 20% 90%;
+
+    --muted: 255 10% 12%;
+    --muted-foreground: 264 15% 65%;
+
+    --accent: 255 10% 15%;
+    --accent-foreground: 264 20% 90%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 255 10% 18%;
+    --input: 255 10% 18%;
+    --ring: 262 52% 65%;
+
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 52% 65%), hsl(265 65% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(255 10% 15%), hsl(255 10% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(262 52% 65%) 0%, hsl(265 65% 75%) 50%, hsl(280 60% 80%) 100%);
+    
+    /* Dark Glassmorphic Effects */
+    --glass-bg: hsla(255, 10%, 10%, 0.8);
+    --glass-border: hsla(262, 52%, 65%, 0.3);
+    --glass-shadow: 0 8px 32px hsla(262, 52%, 65%, 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-smooth hover:translate-y-[-2px] hover:shadow-lg;
+  }
+
+  .hover-glow {
+    @apply transition-smooth hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)];
+  }
+
+  /* Animation Keyframes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+}
