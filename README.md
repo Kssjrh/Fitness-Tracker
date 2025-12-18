@@ -42,13 +42,7 @@ This project is built as a **full-stack application** with a focus on clean UI, 
 
 ---
 
-## 📁 Project Structure
 
-Fitness-Tracker/
-│
-├── kinetix-sync/ # Core application source
-├── README.md
-└── package.json
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
@@ -57,3 +51,4 @@ git clone https://github.com/Kssjrh/Fitness-Tracker.git
 cd Fitness-Tracker
 npm install
 npm start
+
